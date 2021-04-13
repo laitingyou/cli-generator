@@ -1,0 +1,23 @@
+{
+  "version": "1.0.8",
+  "packages": [
+    "packages/*"
+  ],
+  "npmClient": "npm",
+  "command": {
+    "publish": {
+      "ignoreChanges": [
+        ".DS_Store",
+        ".idea/**/*",
+        "test",
+        ".gitignore"
+      ]
+    },
+    "bootstrap": {
+      "ignore": "component-*",
+      "npmClientArgs": [
+        "--no-package-lock"
+      ]
+    }
+  }
+}

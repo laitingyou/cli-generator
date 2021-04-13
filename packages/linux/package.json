@@ -1,0 +1,38 @@
+{
+  "name": "linux-dd-cli",
+  "version": "1.0.8",
+  "description": "点滴云脚手架-linux版",
+  "main": "../../app.js",
+  "keywords": [
+    "serverless",
+    "cli",
+    "dida",
+    "material"
+  ],
+  "bin": {
+    "dd-cli": "./dd-cli"
+  },
+  "files": [
+    "dd-cli",
+    "README.md",
+    "package.json"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "email": "laitingyou@outlook.com",
+    "name": "laitingyou"
+  },
+  "pkg": {
+    "scripts": [
+      "../../config/**/*.js",
+      "../../middleware/**/*.js",
+      "../../controller/**/*.js",
+      "../../service/**/*.js",
+      "../../utils/**/*.js",
+      "../../core/**/*.js"
+    ]
+  },
+  "license": "ISC"
+}
