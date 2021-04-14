@@ -2,7 +2,7 @@
 #### A framework that allows you to quickly generate command line interactive tools.
 
 ## Screenshot
-![static/img.png](static/img.png)
+![static/img.png](/static/img.png)
 
 ## Features
 - Generate executable file, support `Windows` `Linux` `MacOS` platform.
