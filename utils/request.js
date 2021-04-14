@@ -1,12 +1,8 @@
 const request = require('request-promise')
-// const baseUrl = 'http://serverless-platform-dev.deepexi.top'
 const fs = require('fs-extra')
 
 const apis = {
     login: () => '/user-server/api/v1/account/login',
-    quickLogin: () => '/user-server/api/v1/account/quick-login',
-    sendCode: () => '/user-server/api/v1/account/send/code',
-    search: () => '/material-server/api/v1/materials',
     publish: () => '/material-server/api/v1/materials',
 
 }
@@ -16,7 +12,6 @@ const getToken = async function (token){
     return this.auth.token
 }
 
-//  || await getToken.call(this, token)
 const rp = async function (opt = {}, token = true){
     try {
         const res = await request({

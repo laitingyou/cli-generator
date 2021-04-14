@@ -1,19 +1,16 @@
 {
-  "name": "win-dd-cli",
-  "version": "1.0.8",
-  "description": "点滴云脚手架-window版",
+  "name": "cli",
+  "version": "1.0.0",
+  "description": "",
   "main": "../../app.js",
   "keywords": [
-    "serverless",
-    "cli",
-    "dida",
-    "material"
+    "cli"
   ],
   "bin": {
-    "dd-cli": "./dd-cli.exe"
+    "cli": "./cli.exe"
   },
   "files": [
-    "dd-cli.exe",
+    "cli.exe",
     "README.md",
     "package.json"
   ],

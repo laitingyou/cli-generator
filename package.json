@@ -4,10 +4,9 @@
   "description": "A framework that allows you to quickly generate command line interactive tools.",
   "main": "app.js",
   "keywords": [
-    "serverless",
-    "cli",
-    "dida",
-    "material"
+    "cli-generator",
+    "generator",
+    "cli"
   ],
   "bin": {
     "cli": "./app.js"

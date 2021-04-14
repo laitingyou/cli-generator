@@ -1,19 +1,16 @@
 {
-  "name": "macos-dd-cli",
-  "version": "1.0.8",
-  "description": "点滴云脚手架-mac版",
+  "name": "cli",
+  "version": "1.0.0",
+  "description": "",
   "main": "../../app.js",
   "keywords": [
-    "serverless",
-    "cli",
-    "dida",
-    "material"
+    "cli"
   ],
   "bin": {
-    "dd-cli": "./dd-cli"
+    "cli": "./cli"
   },
   "files": [
-    "dd-cli",
+    "cli",
     "README.md",
     "package.json"
   ],
