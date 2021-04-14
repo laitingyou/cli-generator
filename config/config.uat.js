@@ -1,3 +1,3 @@
 module.exports = {
-  baseUrl: 'http://domain.uat',
+    baseUrl: 'http://domain.uat',
 }

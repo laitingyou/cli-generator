@@ -5,15 +5,15 @@ const argv = require('yargs-parser')(process.argv.slice(2))
 const defaultConfig = require('../config/config.default')
 const ENV = argv.e || process.NODE_ENV || 'prod'
 let config = {}
-if (fs.existsSync(`../config/config.${ENV}.js`)) {
-	const extendConfig = require(`./config/config.${ENV}`)
-	config = deepmerge(defaultConfig, extendConfig)
+if (fs.existsSync(`../config/config.${ ENV }.js`)) {
+    const extendConfig = require(`./config/config.${ ENV }`)
+    config = deepmerge(defaultConfig, extendConfig)
 } else {
-	config = defaultConfig
+    config = defaultConfig
 }
 const context = {
-	service: {},
-	config: Object.freeze(config)
+    service: {},
+    config: Object.freeze(config)
 }
 serviceLoader(context)
 module.exports = context

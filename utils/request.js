@@ -7,21 +7,21 @@ const apis = {
 
 }
 
-const getToken = async function (token){
-    if(!token) return null
+const getToken = async function (token) {
+    if (!token) return null
     return this.auth.token
 }
 
-const rp = async function (opt = {}, token = true){
+const rp = async function (opt = {}, token = true) {
     try {
         const res = await request({
             method: opt.method,
-            uri:  this.config.baseUrl + apis[opt.api](opt.params),
+            uri: this.config.baseUrl + apis[opt.api](opt.params),
             body: opt.body,
             qs: opt.params,
             formData: opt.formData,
             headers: {
-                'Authorization': `Bearer ${opt.token || await getToken.call(this, token)}`,
+                'Authorization': `Bearer ${ opt.token || await getToken.call(this, token) }`,
                 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.122 Safari/537.36',
                 ...opt.headers
             },
@@ -30,17 +30,17 @@ const rp = async function (opt = {}, token = true){
         })
         return res.payload || res.data
 
-    }catch (e) {
-        if(e.statusCode === 401){
+    } catch (e) {
+        if (e.statusCode === 401) {
             throw new Error('登录过期，请重新登录再操作吧！')
         }
-        let message = `${opt.api}服务调用失败`
-        if(e.error) {
-           message = e.error.msg || e.error.message
-        }else if(e.message){
-           message = e.message
+        let message = `${ opt.api }服务调用失败`
+        if (e.error) {
+            message = e.error.msg || e.error.message
+        } else if (e.message) {
+            message = e.message
         }
-       throw new Error(message)
+        throw new Error(message)
     }
 
 
