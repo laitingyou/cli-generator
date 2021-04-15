@@ -16,4 +16,5 @@ const context = {
     config: Object.freeze(config)
 }
 serviceLoader(context)
+
 module.exports = context

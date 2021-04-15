@@ -7,8 +7,6 @@ const serviceLoader = function (ctx) {
     services.map(item => {
         const Service = require(`${ servicePath }/${ item }`)
         ctx.service[Service.name] = new Service(ctx)
-        // ctx.service[Service.name].config = ctx.config
-        // ctx.service[Service.name].auth = ctx.auth
     })
 }
 

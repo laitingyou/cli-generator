@@ -1,11 +1,7 @@
 const request = require('request-promise')
 const fs = require('fs-extra')
 
-const apis = {
-    login: () => '/user-server/api/v1/account/login',
-    publish: () => '/material-server/api/v1/materials',
-
-}
+const apis = {}
 
 const getToken = async function (token) {
     if (!token) return null
@@ -42,8 +38,6 @@ const rp = async function (opt = {}, token = true) {
         }
         throw new Error(message)
     }
-
-
 }
 
 module.exports = rp

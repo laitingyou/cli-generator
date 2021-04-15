@@ -21,7 +21,6 @@ const middlewareLoader = async function (middleware, context, callback) {
     } else {
         await callback(context)
     }
-
 }
 
 module.exports = middlewareLoader

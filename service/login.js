@@ -1,5 +1,3 @@
-const request = require('../utils/request')
-
 class Login {
     async loginByAccount(body) {
         try {

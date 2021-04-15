@@ -10,7 +10,6 @@ const router = function ({ command, description, middleware = [] }) {
         }
         program
             .command(command)
-            // .option(item.flags, "Which setup mode to use")
             .description(description)
             .action(async function (...args) {
                 require('../core/middlewareLoader')(middleware, context, async function (ctx) {
@@ -20,6 +19,5 @@ const router = function ({ command, description, middleware = [] }) {
             })
     }
 }
-
 
 module.exports = router

@@ -2,7 +2,7 @@
 #### A framework that allows you to quickly generate command line interactive tools.
 
 ## Screenshot
-![static/img.png](/static/img.png)
+![static/img.png](static/img.png)
 
 ## Features
 - Generate executable file, support `Windows` `Linux` `MacOS` platform.
@@ -133,6 +133,44 @@ async login(ctx, cmd, opt) {
    console.log(ctx.service.Login)
    console.log(ctx.config)
 }
+```
+- middleware
+![static/img2.png](static/img2.png)
+
+middleware/a.js
+```javascript
+module.exports = async function (ctx, next) {
+  console.log('1')
+  await next()
+  console.log('4')
+}
+```
+middleware/b.js
+```javascript
+module.exports = async function (ctx, next) {
+    console.log('2')
+    await next()
+    console.log('3')
+}
+```
+controller/login.js
+```javascript
+@Router({
+        command: 'login',
+        description: '登陆',
+        middleware: ['a', 'b']
+    })
+async login(ctx, cmd, opt) {
+    console.log('login')
+}
+```
+then, run `cli login` output:
+```javascript
+1
+2
+login
+3
+4
 ```
 
 ## Environment

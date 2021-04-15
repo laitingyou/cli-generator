@@ -6,8 +6,7 @@ const build = async function () {
         cwd: path.resolve(),
         stdio: 'inherit'
     })
-    if (data.status !== 0) throw new Error('编译失败，发布终止！')
-
+    if (data.status !== 0) throw new Error('build fail')
 }
 
 module.exports = build
