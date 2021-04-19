@@ -1,5 +1,5 @@
 class Login {
-    async loginByAccount(body) {
+    async login(body) {
         try {
             // pass
         } catch (e) {

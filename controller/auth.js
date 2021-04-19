@@ -19,7 +19,7 @@ class Auth {
             ],
             message: '请选择登录方式：'
         })
-        // this.ctx.loginByAccount()
+        ctx.service.login()
         ctx.loading.succeed('登录成功！')
     }
 
